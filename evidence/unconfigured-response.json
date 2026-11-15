@@ -1,0 +1,50 @@
+{
+  "success": false,
+  "results": [
+    {
+      "platform": "Mastodon",
+      "status": "failed",
+      "posted_url": null,
+      "public_access": false,
+      "date": null,
+      "time": null,
+      "error": "Not configured: MASTODON_ACCESS_TOKEN"
+    },
+    {
+      "platform": "Bluesky",
+      "status": "failed",
+      "posted_url": null,
+      "public_access": false,
+      "date": null,
+      "time": null,
+      "error": "Not configured: BLUESKY_IDENTIFIER, BLUESKY_APP_PASSWORD"
+    },
+    {
+      "platform": "Telegram",
+      "status": "failed",
+      "posted_url": null,
+      "public_access": false,
+      "date": null,
+      "time": null,
+      "error": "Not configured: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID"
+    },
+    {
+      "platform": "Discord",
+      "status": "failed",
+      "posted_url": null,
+      "public_access": false,
+      "date": null,
+      "time": null,
+      "error": "Not configured: DISCORD_WEBHOOK_URL, DISCORD_GUILD_ID"
+    },
+    {
+      "platform": "Slack",
+      "status": "failed",
+      "posted_url": null,
+      "public_access": false,
+      "date": null,
+      "time": null,
+      "error": "Not configured: SLACK_BOT_TOKEN, SLACK_CHANNEL_ID"
+    }
+  ]
+}

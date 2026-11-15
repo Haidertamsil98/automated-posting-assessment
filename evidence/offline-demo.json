@@ -1,0 +1,143 @@
+{
+  "evidence_type": "OFFLINE SIMULATION: no live posts; URLs are fixtures",
+  "generated_at_utc": "2026-11-15T09:43:18.973514+00:00",
+  "scenarios": [
+    {
+      "name": "all_five_succeed_simulated",
+      "request": {
+        "message": "Explore our new platform: https://example.com"
+      },
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "results": [
+          {
+            "platform": "Mastodon",
+            "status": "success",
+            "posted_url": "https://mastodon.example.org/@offline/fixture-post-1",
+            "public_access": true,
+            "date": "2026-11-15",
+            "time": "10:30:00",
+            "error": null
+          },
+          {
+            "platform": "Bluesky",
+            "status": "success",
+            "posted_url": "https://bsky.app/profile/did:plc:offlinefixture/post/fixture-post-1",
+            "public_access": true,
+            "date": "2026-11-15",
+            "time": "09:43:18",
+            "error": null
+          },
+          {
+            "platform": "Telegram",
+            "status": "success",
+            "posted_url": "https://t.me/offline_fixture_channel/101",
+            "public_access": true,
+            "date": "2026-11-15",
+            "time": "10:30:00",
+            "error": null
+          },
+          {
+            "platform": "Discord",
+            "status": "success",
+            "posted_url": "https://discord.com/channels/222222222222222222/333333333333333333/444444444444444444",
+            "public_access": false,
+            "date": "2026-11-15",
+            "time": "10:30:00",
+            "error": null
+          },
+          {
+            "platform": "Slack",
+            "status": "success",
+            "posted_url": "https://offline-fixture.slack.com/archives/C_OFFLINE_FIXTURE/p1794738600000001",
+            "public_access": false,
+            "date": "2026-11-15",
+            "time": "10:30:00",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "mastodon_fails_four_others_succeed_simulated",
+      "request": {
+        "message": "Explore our new platform: https://example.com"
+      },
+      "http_status": 200,
+      "response": {
+        "success": true,
+        "results": [
+          {
+            "platform": "Mastodon",
+            "status": "failed",
+            "posted_url": null,
+            "public_access": false,
+            "date": null,
+            "time": null,
+            "error": "Authentication failed or posting permission denied"
+          },
+          {
+            "platform": "Bluesky",
+            "status": "success",
+            "posted_url": "https://bsky.app/profile/did:plc:offlinefixture/post/fixture-post-1",
+            "public_access": true,
+            "date": "2026-11-15",
+            "time": "09:43:18",
+            "error": null
+          },
+          {
+            "platform": "Telegram",
+            "status": "success",
+            "posted_url": "https://t.me/offline_fixture_channel/101",
+            "public_access": true,
+            "date": "2026-11-15",
+            "time": "10:30:00",
+            "error": null
+          },
+          {
+            "platform": "Discord",
+            "status": "success",
+            "posted_url": "https://discord.com/channels/222222222222222222/333333333333333333/444444444444444444",
+            "public_access": false,
+            "date": "2026-11-15",
+            "time": "10:30:00",
+            "error": null
+          },
+          {
+            "platform": "Slack",
+            "status": "success",
+            "posted_url": "https://offline-fixture.slack.com/archives/C_OFFLINE_FIXTURE/p1794738600000001",
+            "public_access": false,
+            "date": "2026-11-15",
+            "time": "10:30:00",
+            "error": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "validation_rejects_two_links",
+      "request": {
+        "message": "Visit https://example.com and https://example.org"
+      },
+      "http_status": 422,
+      "response": {
+        "detail": [
+          {
+            "type": "value_error",
+            "loc": [
+              "body",
+              "message"
+            ],
+            "msg": "Value error, Message must contain exactly one HTTP(S) CTA link",
+            "input": "Visit https://example.com and https://example.org",
+            "ctx": {
+              "error": {}
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Actual local Uvicorn check. All platform credentials explicitly empty. No live posts.
+$ uvicorn app.main:app --host 0.0.0.0 --port 4000
+GET /openapi.json -> 200; /posting schema confirmed
+GET /docs -> 200; Swagger UI markup confirmed
+POST /posting with one valid CTA -> 200, success=false, five explicit missing-credential failures
+POST /posting with two CTAs -> 422
+Response saved in evidence/unconfigured-response.json
+Outcome: all checks passed; no external platform calls made.

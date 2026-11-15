@@ -1,0 +1,10 @@
+$ ruff check app tests scripts
+All checks passed!
+
+
+Exit code: 0
+$ ruff format --check app tests scripts
+16 files already formatted
+
+
+Exit code: 0
